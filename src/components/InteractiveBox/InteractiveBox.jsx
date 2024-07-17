@@ -7,7 +7,7 @@ function InteractiveBox(props) {
     const [hovered, setHover] = useState(false);
     const [active, setActive] = useState(false);
 
-    useFrame((state, delta) => (group.current.rotation.x += 0.01, group.current.rotation.y += 0.01));
+    // useFrame((state, delta) => (group.current.rotation.x += 0.009, group.current.rotation.y += 0.01));
 
     return (
         <group
@@ -19,7 +19,7 @@ function InteractiveBox(props) {
             onPointerOut={() => setHover(false)}>
             <mesh >
                 <octahedronGeometry args={[1, 0]} />
-                <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />            </mesh>
+                <meshBasicMaterial color={hovered ? 'white' : 'white'} />            </mesh>
             <lineSegments>
                 <edgesGeometry attach="geometry" args={[new OctahedronGeometry(1, 0)]} />
                 <lineBasicMaterial color="black" />
